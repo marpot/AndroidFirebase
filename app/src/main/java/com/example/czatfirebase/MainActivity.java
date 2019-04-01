@@ -10,6 +10,7 @@ import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 
+
 public class MainActivity extends AppCompatActivity {
 
     public static int SIGN_IN_REQUEST_CODE = 4;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         //Tu trzeba dopisać metodę
     }
 
-    @Override
+   // @Override
     protected void onAcitivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
 
