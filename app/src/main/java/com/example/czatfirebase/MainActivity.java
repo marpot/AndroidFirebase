@@ -2,6 +2,7 @@ package com.example.czatfirebase;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayChatMessages() {
-
+        //Tu trzeba dopisać metodę
     }
 
     @Override
