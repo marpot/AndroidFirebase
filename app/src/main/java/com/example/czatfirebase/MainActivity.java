@@ -10,6 +10,12 @@ import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 
+/*TODO:
+ * Darek - napisać i podpiąc metody do wysyłania i odbierania wiadomości. masz zaczęte
+  * Mateusz - podepnij przyciski które zrobi Svieta
+  * Svieta - grafika.
+  * Ja - póki co zrobiłem dużo,teraz pomóżcie mi z tymi metodami żeby wysyłało i odbierąło wiadomości,bo nie mam pomysłu
+         **/
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,12 +42,13 @@ public class MainActivity extends AppCompatActivity {
                  getCurrentUser().getDisplayName(),
                  Toast.LENGTH_LONG).show();
          //Load chat room contents
-         displayChatMessages();
+
      }
     }
 
-    private void displayChatMessages() {
-        //Tu trzeba dopisać metodę
+
+    private String displayChatMessages(String Message) {
+        return Message;
     }
 
    // @Override
@@ -52,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK){
                 Toast.makeText(this,"Successfully signed in! Welcome!",Toast.LENGTH_LONG).show();
 
-                displayChatMessages();
+                displayChatMessages(INPUT_METHOD_SERVICE);
             } else {
                 Toast.makeText(this, "We couldn't sign you in. Please try again later",
                         Toast.LENGTH_LONG).show();
