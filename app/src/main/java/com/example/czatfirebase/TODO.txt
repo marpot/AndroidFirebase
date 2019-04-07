@@ -1,6 +1,0 @@
-TODO:
- * Darek - napisać i podpiąc metody do wysyłania i odbierania wiadomości. masz zaczęte
- * Mateusz - podepnij przyciski które zrobi Svieta
- * Svieta - grafika.
- * Ja - póki co zrobiłem dużo,teraz pomóżcie mi z tymi metodami żeby wysyłało i odbierąło wiadomości,bo nie mam pomysłu
- * Wojtek - to samo co ja i Darek. Metody do wysyłania i odbierania wiadomości podpięte pod xmla i bazę. Nie wiem jak to ugryźć
