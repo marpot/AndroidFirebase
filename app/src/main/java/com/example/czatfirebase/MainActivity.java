@@ -10,12 +10,7 @@ import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 
-/*TODO:
- * Darek - napisać i podpiąc metody do wysyłania i odbierania wiadomości. masz zaczęte
-  * Mateusz - podepnij przyciski które zrobi Svieta
-  * Svieta - grafika.
-  * Ja - póki co zrobiłem dużo,teraz pomóżcie mi z tymi metodami żeby wysyłało i odbierąło wiadomości,bo nie mam pomysłu
-         **/
+
 
 public class MainActivity extends AppCompatActivity {
 
