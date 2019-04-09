@@ -36,6 +36,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:11.4.2'
 
 
-
 }
 apply plugin: 'com.google.gms.google-services'
