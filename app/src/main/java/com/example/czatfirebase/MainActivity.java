@@ -3,26 +3,31 @@ package com.example.czatfirebase;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateFormat;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
-
-/*TODO:
- * Darek - napisać i podpiąc metody do wysyłania i odbierania wiadomości. masz zaczęte
- * Mateusz - podepnij przyciski które zrobi Svieta
- * Svieta - grafika.
- * Ja - póki co zrobiłem dużo,teraz pomóżcie mi z tymi metodami żeby wysyłało i odbierąło wiadomości,bo nie mam pomysłu
- * Wojtek - wysyłanie i odbieranie wiadomości - to co ja i Darek. Potem dołożymy szyfrowanie
- **/
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity {
 
     public static int SIGN_IN_REQUEST_CODE = 4;
-
+    private FirebaseListAdapter<ChatMessage> adapter;
     private FirebaseAnalytics mFirebaseAnalytics;
     //zmiany
     @Override
@@ -32,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         Bundle bundle = new Bundle();
+
 
      if (FirebaseAuth.getInstance().getCurrentUser() == null){
 
@@ -44,13 +50,58 @@ public class MainActivity extends AppCompatActivity {
                  getCurrentUser().getDisplayName(),
                  Toast.LENGTH_LONG).show();
          //Load chat room contents
+         displayChatMessages();
 
+         FloatingActionButton fab =
+                 (FloatingActionButton)findViewById(R.id.fab);
+
+         fab.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 EditText input = (EditText)findViewById(R.id.input);
+
+                 // Read the input field and push a new instance
+                 // of ChatMessage to the Firebase database
+                 FirebaseDatabase.getInstance()
+                         .getReference()
+                         .push()
+                         .setValue(new ChatMessage(input.getText().toString(),
+                                 FirebaseAuth.getInstance()
+                                         .getCurrentUser()
+                                         .getDisplayName())
+                         );
+
+                 // Clear the input
+                 input.setText("");
+             }
+         });
      }
     }
 
 
-    private String displayChatMessages(String Message) {
-        return Message;
+    private void displayChatMessages() {
+        ListView listOfMessages = (ListView)findViewById(R.id.list_of_messages);
+
+        adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
+                R.layout.message, FirebaseDatabase.getInstance().getReference()) {
+            @Override
+            protected void populateView(View v, ChatMessage model, int position) {
+                // Get references to the views of message.xml
+                TextView messageText = (TextView)v.findViewById(R.id.message_text);
+                TextView messageUser = (TextView)v.findViewById(R.id.message_user);
+                TextView messageTime = (TextView)v.findViewById(R.id.message_time);
+
+                // Set their text
+                messageText.setText(model.getMessageText());
+                messageUser.setText(model.getMessageUser());
+
+                // Format the date before showing it
+                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
+                        model.getMessageTime()));
+            }
+        };
+
+        listOfMessages.setAdapter(adapter);
     }
 
    // @Override
@@ -61,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK){
                 Toast.makeText(this,"Successfully signed in! Welcome!",Toast.LENGTH_LONG).show();
 
-                displayChatMessages(INPUT_METHOD_SERVICE);
+                displayChatMessages();
             } else {
                 Toast.makeText(this, "We couldn't sign you in. Please try again later",
                         Toast.LENGTH_LONG).show();
@@ -72,5 +123,28 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+
+    public boolean OnOptionsItemSelected(MenuItem item){
+        if (item.getItemId() == R.id.menu_sign_out){
+            AuthUI.getInstance().signOut(this).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    Toast.makeText(MainActivity.this,
+                            "You have been signed out.",
+                            Toast.LENGTH_LONG).show();
+
+                    //Close activity
+                    finish();
+                }
+            });
+        }
+        return true;
+    }
 
 }

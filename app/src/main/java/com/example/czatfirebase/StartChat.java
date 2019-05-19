@@ -16,6 +16,6 @@ public class StartChat extends AppCompatActivity {
         ImageView imageView2 = (ImageView) findViewById(R.id.imageView2);
 
         //getResources().getDrawable(R.drawable.avatar,null);
-        imageView2.setImageResource(R.drawable.avatar);
+        //imageView2.setImageResource(R.drawable.avatar);
     }
 }
