@@ -29,14 +29,14 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:11.6.0'
     implementation 'com.google.android.gms:play-services-maps:11.6.0'
     implementation 'com.google.android.gms:play-services-location:11.6.0'
-    implementation 'com.google.firebase:firebase-core:11.4.2'
-    implementation 'com.google.firebase:firebase-auth:11.4.2'
+    implementation 'com.google.firebase:firebase-core:11.6.0'
+    implementation 'com.google.firebase:firebase-auth:11.6.0'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.firebaseui:firebase-ui:1.1.1'
-    implementation 'com.firebaseui:firebase-ui:1.1.1'
+
     implementation 'com.google.android.gms:play-services-ads:11.6.0'
     implementation 'com.google.firebase:firebase-messaging:11.6.0'
-    implementation 'com.google.firebase:firebase-database:17.0.0'
+    implementation 'com.google.firebase:firebase-database:11.6.0'
 
 
 }

@@ -17,7 +17,7 @@ public class ChatMessage {
     }
 
     public ChatMessage(){
-
+        
     }
 
     public String getMessageText(){

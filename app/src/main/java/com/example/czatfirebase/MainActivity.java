@@ -1,8 +1,10 @@
 package com.example.czatfirebase;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
