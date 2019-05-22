@@ -1,5 +1,7 @@
 package com.example.czatfirebase;
 
+import android.widget.TextView;
+
 import java.util.Date;
 
 public class ChatMessage {
@@ -17,19 +19,19 @@ public class ChatMessage {
     }
 
     public ChatMessage(){
-        
+
     }
 
-    public String getMessageText(){
-        return messageText;
+    public String getMessageText(TextView messageText){
+        return this.messageText;
     }
 
     public void setMessageText(String messageText){
         this.messageText = messageText;
     }
 
-    public String getMessageUser(){
-        return messageUser;
+    public String getMessageUser(TextView messageUser){
+        return this.messageUser;
     }
 
     public void setMessageUser(String messageUser){
