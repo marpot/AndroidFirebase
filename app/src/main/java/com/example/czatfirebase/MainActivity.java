@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView messageText = (TextView)v.findViewById(R.id.message_text);
                 TextView messageUser = (TextView)v.findViewById(R.id.message_user);
                 TextView messageTime = (TextView)v.findViewById(R.id.message_time);
-/**TODO: wyswietlanie wiadomosci!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! **//
+//TODO: wyswietlanie wiadomosci!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 // Set their text
                 messageText.setText(model.getMessageText(messageText));
                 messageUser.setText(model.getMessageUser(messageUser));
