@@ -42,6 +42,7 @@ public class StartChat extends AppCompatActivity {
                         );
 
                 input.setText("");
+
             }
         });
     }

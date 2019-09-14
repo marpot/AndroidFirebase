@@ -15,36 +15,13 @@
       },
       "oauth_client": [
         {
-          "client_id": "295559536334-97bl7p7jqnga9inu9lcqub3hk15sdvrm.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAvQJ3yy5wdZB6vDR9p9-ktjGLex-WSzcU"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
+          "client_id": "295559536334-hfb99846m4ec87m44ts77081b1rensk8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.czatfirebase",
+            "certificate_hash": "8646b4d7e56b75bee6b6e575fe836a28f5c7c683"
+          }
         },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:295559536334:android:13c3c6a65bcbec53",
-        "android_client_info": {
-          "package_name": "com.example.myapplication"
-        }
-      },
-      "oauth_client": [
         {
           "client_id": "295559536334-97bl7p7jqnga9inu9lcqub3hk15sdvrm.apps.googleusercontent.com",
           "client_type": 3
@@ -56,15 +33,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295559536334-97bl7p7jqnga9inu9lcqub3hk15sdvrm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

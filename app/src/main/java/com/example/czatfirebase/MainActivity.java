@@ -1,10 +1,7 @@
 package com.example.czatfirebase;
 
-import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Message;
-import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -24,8 +21,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.messaging.FirebaseMessagingService;
-
 
 public class MainActivity extends AppCompatActivity {
 
